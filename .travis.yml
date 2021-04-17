@@ -1,20 +1,13 @@
-
 os:
   - linux
 sudo: false
-addons:
-  apt:
-    # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
-    sources:
-      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
-    packages:
-      - libstdc++6
-      - fonts-droid
-
+before_script:
+  - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter packages get
 script:
-  - ./flutter/bin/dart analyze
-  - ./flutter/bin/flutter analyze
-  - ./flutter/bin/flutter test
+  - ./flutter/bin/flutter analyze --no-current-package --dartdocs $TRAVIS_BUILD_DIR/lib
+  - ./flutter/bin/flutter test --coverage --coverage-path=lcov.info
 cache:
   directories:
     - $HOME/.pub-cache
