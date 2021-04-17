@@ -1,4 +1,4 @@
-import 'package:arqutitetura_smart/data/models/login_model.dart';
+import 'package:arqutitetura_smart/data/models/models.dart';
 
 abstract class LoginLocalDatasource {
   Future<bool> initDb();

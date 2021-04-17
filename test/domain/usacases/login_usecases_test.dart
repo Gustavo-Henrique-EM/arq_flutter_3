@@ -2,7 +2,6 @@ import 'package:arqutitetura_smart/domain/entities/entities.dart';
 import 'package:arqutitetura_smart/domain/repositories/repositories.dart';
 import 'package:arqutitetura_smart/domain/sevices/services.dart';
 import 'package:arqutitetura_smart/domain/usecases/login_usecases.dart';
-import 'package:arqutitetura_smart/data/models/models.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
