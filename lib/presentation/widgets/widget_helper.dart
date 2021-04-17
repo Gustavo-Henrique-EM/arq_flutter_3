@@ -20,16 +20,13 @@ class WidgetHelper {
     );
   }
 
-  static void showError(GlobalKey<ScaffoldState> key, String errorMessage) {
+  static void showError(BuildContext context, String errorMessage) {
     _onWidgetDidBuild(() {
-      // ignore: deprecated_member_use
-      key.currentState.showSnackBar(
-        SnackBar(
-          content: Text(errorMessage),
-          backgroundColor: Colors.red,
-          duration: Duration(seconds: 2),
-        ),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(errorMessage),
+        duration: Duration(seconds: 2),
+        backgroundColor: Colors.red,
+      ));
     });
   }
 

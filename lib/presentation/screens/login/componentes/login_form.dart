@@ -85,12 +85,20 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               color: Colors.white,
               // ignore: deprecated_member_use
-              child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+              child: TextButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
                   ),
                   child: widget,
-                  onPressed: () => onLoginButtonPressed(senha: _senhaController.text, login: _usuarioController.text, context: context)),
+                  //child: widget,
+                  onPressed: () => onLoginButtonPressed(
+                      senha: _senhaController.text,
+                      login: _usuarioController.text,
+                      context: context)),
             ),
           ],
         ),

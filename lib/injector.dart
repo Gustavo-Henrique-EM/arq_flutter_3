@@ -7,7 +7,6 @@ import 'package:arqutitetura_smart/presentation/bloc/bloc.dart';
 
 import 'package:get_it/get_it.dart';
 
-
 final getIt = GetIt.instance;
 
 Future<void> init() async {
