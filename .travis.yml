@@ -1,16 +1,15 @@
+
+os:
+  - linux
+sudo: false
 addons:
-  firefox: latest
-  chrome: stable
-
-language: dart
-sudo: required
-
-dart:
-  - stable
-  - beta
-  - dev
-before_script:
-  - dart pub get
+  apt:
+    # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
+    sources:
+      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
+    packages:
+      - libstdc++6
+      - fonts-droid
 
 script:
   - ./flutter/bin/dart analyze
