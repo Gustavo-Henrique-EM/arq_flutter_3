@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Gustavo-Henrique-EM/arq_flutter_3.svg?branch=main)](https://travis-ci.org/github/Gustavo-Henrique-EM/arq_flutter_3)
+
 # arqutitetura_smart
 
 A new Flutter application.
