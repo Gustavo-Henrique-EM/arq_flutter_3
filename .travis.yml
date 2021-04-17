@@ -15,7 +15,6 @@ script:
   - ./flutter/bin/dart analyze
   - ./flutter/bin/flutter analyze
   - ./flutter/bin/flutter test
-  - ./flutter/bin/flutter build apk
 cache:
   directories:
     - $HOME/.pub-cache
