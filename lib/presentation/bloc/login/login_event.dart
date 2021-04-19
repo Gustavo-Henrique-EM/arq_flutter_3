@@ -6,7 +6,7 @@ class LoginButtonPressedEvent extends LoginEvent {
   final String login;
   final String senha;
 
-  LoginButtonPressedEvent({@required this.login, @required this.senha});
+  LoginButtonPressedEvent({required this.login, required this.senha});
 
   @override
   String toString() =>

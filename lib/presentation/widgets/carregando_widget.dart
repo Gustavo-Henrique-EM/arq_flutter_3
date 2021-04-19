@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CarregandoWidget extends StatelessWidget {
   final String mensagem;
 
-  CarregandoWidget({this.mensagem});
+  CarregandoWidget({required this.mensagem});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CarregandoWidget extends StatelessWidget {
             height: 20,
           ),
           Text(
-            this.mensagem ?? "Carregando...",
+            this.mensagem,
             style: Theme.of(context).textTheme.bodyText1,
           )
         ],

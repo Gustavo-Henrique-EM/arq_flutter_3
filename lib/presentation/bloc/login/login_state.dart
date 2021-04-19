@@ -7,16 +7,16 @@ class LoginState extends Equatable {
   final bool isCarregando;
   final bool isSucesso;
   final bool isErro;
-  final String error;
-  final Login login;
+  final String? error;
+  final Login? login;
 
   LoginState({
-    @required this.isInicializando,
-    @required this.isCarregando,
-    @required this.isSucesso,
-    @required this.isErro,
-    @required this.error,
-    @required this.login,
+    required this.isInicializando,
+    required this.isCarregando,
+    required this.isSucesso,
+    required this.isErro,
+    required this.error,
+    required this.login,
   });
 
   factory LoginState.initial() {
@@ -64,6 +64,5 @@ class LoginState extends Equatable {
   }
 
   @override
-  List<Object> get props =>
-      [isInicializando, isCarregando, isSucesso, isErro, error];
+  List<Object> get props => [isInicializando, isCarregando, isSucesso, isErro];
 }

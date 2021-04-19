@@ -5,7 +5,9 @@ import 'package:arqutitetura_smart/data/metodo_extensao_converta.dart';
 
 class LoginServiceImpl implements LoginService {
   @override
-  Future<Login> realizeLogin({String usuario, String senha}) async {
+  Future<Login> realizeLogin(
+      {required String usuario, required String senha}) async {
+
     if (usuario == "gustavo" && senha == "123456") {
       var loginModel = LoginModel(
           usuario: UsuarioModel(nome: "Gustavo", id: 1), token: "asasasad");
@@ -13,6 +15,6 @@ class LoginServiceImpl implements LoginService {
       return loginModel.converta;
     }
 
-    throw Exception("Login ou senha inválido");
+    throw Exception("Login incorreto");
   }
 }

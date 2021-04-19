@@ -6,9 +6,9 @@ class Session {
   final String tokenUsuario;
 
   Session({
-    @required this.tokenUsuario,
-    @required this.user,
-  })  : assert(tokenUsuario != null),
+    required this.tokenUsuario,
+    required this.user,
+  })   : assert(tokenUsuario != null),
         assert(user != null);
 
   Session altereToken(String token) {

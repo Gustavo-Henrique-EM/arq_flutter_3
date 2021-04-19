@@ -5,13 +5,13 @@ abstract class ApplicationEvent {}
 
 class ApplicationStartEvent extends ApplicationEvent {
   final BuildContext context;
-  ApplicationStartEvent({@required this.context});
+  ApplicationStartEvent({required this.context});
 }
 
 class ApplicationLoginEvent extends ApplicationEvent {
   final String token;
 
-  ApplicationLoginEvent({@required this.token});
+  ApplicationLoginEvent({required this.token});
 }
 
 class ApplicationLogoutEvent extends ApplicationEvent {
@@ -22,5 +22,5 @@ class ApplicationLogoutEvent extends ApplicationEvent {
 class ApplicationAlteracaoSenhaEvent extends ApplicationEvent {
   final String novoToken;
 
-  ApplicationAlteracaoSenhaEvent({@required this.novoToken});
+  ApplicationAlteracaoSenhaEvent({required this.novoToken});
 }

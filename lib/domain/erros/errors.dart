@@ -4,15 +4,15 @@ abstract class Failure implements Exception {
 
 class ConnectionError extends Failure {
   final String message;
-  ConnectionError({this.message});
+  ConnectionError({required this.message});
 }
 
 class ErrorLogin extends Failure {
   final String message;
-  ErrorLogin({this.message});
+  ErrorLogin({required this.message});
 }
 
 class InternalError implements Failure {
   final String message;
-  InternalError({this.message});
+  InternalError({required this.message});
 }

@@ -29,12 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
             if (state.isSucesso) {
               BlocProvider.of<ApplicationBloc>(context).add(
                 ApplicationLoginEvent(
-                  token: state.login.token,
+                  token: state.login!.token,
                 ),
               );
             }
             if (state.isErro) {
-              WidgetHelper.showError(context, state.error);
+              WidgetHelper.showError(context, state.error!);
             }
 
             return LoginBody();
@@ -45,7 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-void onLoginButtonPressed({String senha, String login, BuildContext context}) {
+void onLoginButtonPressed(
+    {required String senha,
+    required String login,
+    required BuildContext context}) {
   BlocProvider.of<LoginBloc>(context).add(LoginButtonPressedEvent(
     senha: senha,
     login: login,

@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ApplicationBloc _appBloc;
+  late ApplicationBloc _appBloc;
   @override
   void initState() {
     super.initState();

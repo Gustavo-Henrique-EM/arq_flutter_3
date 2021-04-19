@@ -6,7 +6,7 @@ class Login {
   final String token;
 
   Login({
-    @required this.usuario,
-    @required this.token,
+    required this.usuario,
+    required this.token,
   });
 }

@@ -1,5 +1,5 @@
 import 'package:arqutitetura_smart/domain/entities/entities.dart';
 
 abstract class LoginService {
-  Future<Login> realizeLogin({String usuario, String senha});
+  Future<Login> realizeLogin({required String usuario, required String senha});
 }

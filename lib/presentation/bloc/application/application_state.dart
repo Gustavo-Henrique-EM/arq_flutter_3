@@ -5,13 +5,13 @@ class ApplicationState {
   final bool isInitializing;
   final bool isLoading;
   final bool isAuthenticated;
-  final Session session;
+  final Session? session;
 
   ApplicationState({
-    @required this.isInitializing,
-    @required this.isLoading,
-    @required this.isAuthenticated,
-    @required this.session,
+    required this.isInitializing,
+    required this.isLoading,
+    required this.isAuthenticated,
+    required this.session,
   });
 
   factory ApplicationState.initializing() {

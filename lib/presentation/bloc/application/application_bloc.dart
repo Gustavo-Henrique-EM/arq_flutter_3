@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:test/test.dart';
 
 import 'application_event.dart';
 import 'application_state.dart';
@@ -11,8 +12,8 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   @override
   Stream<ApplicationState> mapEventToState(ApplicationEvent event) async* {
     if (event is ApplicationStartEvent) {
-      String token; //await TokenRepository().getToken();
-      if (token == null) {
+      String token = ""; //await TokenRepository().getToken();
+      if (token.isEmpty) {
         yield ApplicationState.unauthenticated();
       } else {
         yield* _inicializeAplicacao(token);

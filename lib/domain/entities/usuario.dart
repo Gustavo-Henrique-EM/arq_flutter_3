@@ -6,7 +6,7 @@ class Usuario {
   final String nome;
 
   Usuario({
-    @required this.id,
-    @required this.nome,
+    required this.id,
+    required this.nome,
   });
 }

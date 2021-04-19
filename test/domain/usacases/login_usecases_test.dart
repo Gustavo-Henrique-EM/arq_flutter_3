@@ -14,9 +14,9 @@ class LoginServiceMock extends Mock implements LoginService {}
 
 void main() {
 
-  LoginRepositoryMock repository;
-  LoginServiceMock service;
-  LoginUseCase usecase;
+  late LoginRepositoryMock repository;
+  late LoginServiceMock service;
+  late LoginUseCase usecase;
 
   setUp(() {
     repository = LoginRepositoryMock();
