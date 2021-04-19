@@ -3,16 +3,18 @@ import 'package:dartz/dartz.dart';
 import 'package:arqutitetura_smart/domain/erros/errors.dart';
 import 'package:arqutitetura_smart/domain/repositories/repositories.dart';
 import 'package:arqutitetura_smart/domain/sevices/services.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 class LoginUseCase {
   final LoginService loginService;
   final LoginRepository loginRepository;
 
-  LoginUseCase({this.loginService, this.loginRepository});
+  LoginUseCase({required this.loginService, required this.loginRepository});
 
   Future<Either<Failure, Login>> realizeLogin(
-      {String usuario, String senha}) async {
+      {required String usuario, required String senha}) async {
     if (usuario.isEmpty || senha.isEmpty) {
+      //throw Exception("Teste vazio");
       return Left(ErrorLogin(message: "Informe login e a senha"));
     }
     if (senha.length < 6) {
@@ -33,8 +35,10 @@ class LoginUseCase {
       }
       //loginRepository.Grave(loginModel.user);
       return Right(login);
-    } catch (e) {
-      return Left(InternalError(message: e.toString()));
+    } catch (error, stackTrace) {
+      await Sentry.captureException(error,
+          stackTrace: stackTrace, hint: "usuario: ${"155653"}");
+      return Left(InternalError(message: error.toString()));
     }
   }
 }
