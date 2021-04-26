@@ -45,6 +45,7 @@ class _LoginFormState extends State<LoginForm> {
               height: 20,
             ),
             TextFormField(
+              key: Key('user-text-field'),
               keyboardType: TextInputType.emailAddress,
               controller: _usuarioController,
               style: TextStyle(color: Colors.black87),
@@ -62,6 +63,7 @@ class _LoginFormState extends State<LoginForm> {
               height: 10,
             ),
             TextField(
+              key: Key('senha-text-field'),
               controller: _senhaController,
               keyboardType: TextInputType.text,
               style: TextStyle(color: Colors.black87),
@@ -86,6 +88,7 @@ class _LoginFormState extends State<LoginForm> {
               color: Colors.white,
               // ignore: deprecated_member_use
               child: TextButton(
+                  key: Key('login-text-button'),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(

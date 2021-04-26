@@ -36,8 +36,8 @@ class LoginUseCase {
       //loginRepository.Grave(loginModel.user);
       return Right(login);
     } catch (error, stackTrace) {
-      await Sentry.captureException(error,
-          stackTrace: stackTrace, hint: "usuario: ${"155653"}");
+//      await Sentry.captureException(error,
+//          stackTrace: stackTrace, hint: "usuario: ${"155653"}");
       return Left(InternalError(message: error.toString()));
     }
   }

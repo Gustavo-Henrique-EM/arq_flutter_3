@@ -15,17 +15,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (event is LoginButtonPressedEvent) {
       yield LoginState.loading();
 
-      try {
-        var result = await loginUseCase.realizeLogin(
-            usuario: event.login, senha: event.senha);
-        yield result.fold(
-          (failure) => LoginState.failure(failure.message),
-          (success) => LoginState.success(success),
-        );
-      } catch (error, stackTrace) {
-        await Sentry.captureException(error,
-            stackTrace: stackTrace, hint: "{'usuario': '${"46621"}', 'token': 'asdsddsdsfdfsdfr'}");
-      }
+      var result = await loginUseCase.realizeLogin(
+          usuario: event.login, senha: event.senha);
+      yield result.fold(
+        (failure) => LoginState.failure(failure.message),
+        (success) => LoginState.success(success),
+      );
     }
   }
 }

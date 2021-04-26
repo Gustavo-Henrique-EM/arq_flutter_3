@@ -7,7 +7,6 @@ class LoginServiceImpl implements LoginService {
   @override
   Future<Login> realizeLogin(
       {required String usuario, required String senha}) async {
-
     if (usuario == "gustavo" && senha == "123456") {
       var loginModel = LoginModel(
           usuario: UsuarioModel(nome: "Gustavo", id: 1), token: "asasasad");
