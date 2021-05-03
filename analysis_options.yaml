@@ -3,12 +3,12 @@ analyzer:
     implicit-casts: false
     implicit-dynamic: false
   errors:
-    # treat missing required parameters as a warning (not a hint)
-    missing_required_param: warning
-    # treat missing returns as a warning (not a hint)
-    missing_return: warning
-    dead_code: warning 
-    # allow having TODOs in the code
+    # trate os parâmetros obrigatórios ausentes
+    missing_required_param: error
+    # trate retornos ausentes do tipo
+    missing_return: error
+    dead_code: error 
+    # evitar ter TODOs no código
     todo: warning
 
   exclude:
@@ -16,4 +16,37 @@ analyzer:
 
 linter:
   rules:
-   - unnecessary_getters_setters
+   # Evite instruções else vazias
+   - avoid_empty_else
+   # Evite retornar nulo para Futuro
+   - avoid_returning_null_for_future
+   # Evite declarações vazias
+   - empty_statements
+   # Evite usar declarações desnecessárias
+   - unnecessary_statements
+   # Use chave em construtores de widget, necessário para testes de integração
+   - use_key_in_widget_constructors
+   # Declare os tipos de retorno do método
+   - always_declare_return_types
+   # Coloque os parâmetros nomeados necessários primeiro
+   - always_put_required_named_parameters_first
+   # Especifique anotações de tipo
+   - always_specify_types
+   # Evite tipos de retorno em setters
+   - Avoid_return_types_on_setters
+   # Evite retornar null para void
+   - Avoid_returning_null_for_void
+   # Evite recipientes desnecessários
+   - Avoid_unnecessary_containers
+   # Prefira usar lowerCamelCase para nomes de constantes
+   - constant_identifier_names
+   # Nomeie os arquivos de origem usando lowercase_with_underscores
+   - file_names
+   # Evite linhas com mais de 80 caracteres
+   - lines_longer_than_80_chars
+   # Prefira aspas duplas onde não exijam sequências de escape
+   - prefer_double_quotes
+   # Use interpolação para compor strings e valores
+   - prefer_interpolation_to_compose_strings
+   # Parênteses desnecessários podem ser removidos
+   - unnecessary_parenthesis
